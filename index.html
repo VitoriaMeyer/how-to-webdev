@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-do</title>
+        <meta charset="utf-8">
+        <script>
+            function displayText() {
+                if (event.keyCode === 13) {
+                    var userInput = document.getElementById("text_box1").value;
+            
+                    var listItem = document.createElement("li");
+                    listItem.textContent = userInput;
+
+                    document.getElementById("textList").appendChild(listItem);
+
+                    document.getElementById("text_box1").value = "";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>To-Do List</h1> 
+        <label for="text_box1">What do you want to do?</label>
+        <input type="text" id="text_box1" name="text_box1" onkeydown="displayText(event)">
+        <button type="button" onclick="displayText()">Done</button>
+
+        <ul id="textList"></ul>
+    </body>
+</html>
